@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.*;
 
@@ -6,6 +7,8 @@ public class  Visor extends JLabel {
     private  String operando2 = "";
     private  Character operador ='#' ;
     private String msg = operando1.toString() + operador.toString() + operando2.toString();
+    private StringBuilder op1 = new StringBuilder(operando1);
+    private StringBuilder op2 = new StringBuilder(operando2);
 
     public Visor(){
         //Definiçã padrão do visor
@@ -14,7 +17,6 @@ public class  Visor extends JLabel {
         this.setSize(50,50);
         this.setFont(new Font("Arial",Font.PLAIN,40));
         this.setHorizontalAlignment(JLabel.RIGHT);
-
     }
 
     public  void setOperador(char operador) {
@@ -23,12 +25,28 @@ public class  Visor extends JLabel {
     public void setOperadores(String operador){
         if (this.operador == '#') {
             this.operando1 = this.operando1 + operador;
-
+            this.op1 = new StringBuilder(this.operando1);
         }
         if(this.operador != '#') {
-
             this.operando2 = this.operando2 + operador;
+            this.op2 =  new StringBuilder(this.operando2);
         }
+    }
+
+    public void apagar(){
+        if(this.operando2 != ""){
+            this.op2.deleteCharAt(this.operando2.length()-1);
+            this.operando2 = this.op2.toString();
+            this.setMsg();
+        }else if(this.operador != '#'){
+            this.operador = '#';
+            this.setMsg();
+        }else if(this.operando1 != ""){
+            this.op1.deleteCharAt(this.operando1.length()-1);
+            this.operando1 = this.op1.toString();
+            this.setMsg();
+        }
+
     }
 
     public void realizarOperacao(){
@@ -60,7 +78,9 @@ public class  Visor extends JLabel {
                     this.setText(aux.toString());
                     break;
             }
-
+            this.operando1 = "";
+            this.operando2 = "";
+            this.operador = '#';
         }
     }
 

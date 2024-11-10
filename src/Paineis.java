@@ -7,7 +7,6 @@ public class Paineis {
     private  JPanel visor =  new JPanel();
     private  JPanel teclado = new JPanel();
 
-
     public Paineis(){
         Botoes botoes =  new Botoes();
 
@@ -16,22 +15,10 @@ public class Paineis {
         visor.setBackground(visorC);
         visor.add(InteracaoBotoes.visor, BorderLayout.CENTER);
 
-
         teclado.setLayout(new GridLayout(4,4));
         teclado.setBounds(0,170,326,305);
         teclado.setBackground(backgroundColor);
         for(int i = 0; i < 16; i++) this.teclado.add(botoes.getBotoes().get(i));
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
