@@ -11,10 +11,10 @@ public class Paineis {
     public Paineis(){
         Botoes botoes =  new Botoes();
 
-        visor.setBounds(0,0,340,170);
+        visor.setBounds(0,0,320,170);
         visor.setLayout(new BorderLayout());
         visor.setBackground(visorC);
-        visor.add(botoes.getVisorL(), BorderLayout.CENTER);
+        visor.add(InteracaoBotoes.visor, BorderLayout.CENTER);
 
 
         teclado.setLayout(new GridLayout(4,4));

@@ -1,7 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 
 public class JanelaPrincipal extends JFrame {
 
@@ -21,6 +18,10 @@ public class JanelaPrincipal extends JFrame {
         this.setResizable(false);
         this.add(paineis.getVisor());
         this.add(paineis.getTeclado());
+
+        this.setIconImage((new ImageIcon(JanelaPrincipal.class.getResource("Calculadora24.png")).getImage()));
+
+
 
 
 
