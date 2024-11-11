@@ -13,21 +13,15 @@ public class Botoes   {
             botoes.add(new JButton());
             botoes.get(i).setBackground(tecladoC);
             botoes.get(i).setPreferredSize(dimensaoBotao);
-
         }
-        //imagem dos botões
-
+        //imagem dos botoes
         new ImagensBotoes(botoes);
         //interação dos botões com o visor
          new InteracaoBotoes(botoes);
-
     }
-
-
 
     public  ArrayList<JButton> getBotoes() {
         return botoes;
     }
-
 
 }

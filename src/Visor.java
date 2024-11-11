@@ -7,7 +7,7 @@ public class  Visor extends JLabel {
     private  String operando2 = "";
     private  Character operador ='#' ;
     private String msg = operando1.toString() + operador.toString() + operando2.toString();
-    private StringBuilder op1 = new StringBuilder(operando1);
+    private  StringBuilder op1 = new StringBuilder(operando1);
     private StringBuilder op2 = new StringBuilder(operando2);
 
     public Visor(){
@@ -20,10 +20,11 @@ public class  Visor extends JLabel {
     }
 
     public  void setOperador(char operador) {
-        this.operador = operador;
+        if(this.operando1 != "")this.operador = operador;
+        else this.setText("Operação Invalida");
     }
     public void setOperadores(String operador){
-        if (this.operador == '#') {
+        if (this.operador.equals('#')) {
             this.operando1 = this.operando1 + operador;
             this.op1 = new StringBuilder(this.operando1);
         }
@@ -50,7 +51,7 @@ public class  Visor extends JLabel {
     }
 
     public void realizarOperacao(){
-        if(this.operando2 == ""){
+        if(this.operando2 == "" && this.operando1 != ""){
             this.setText("Operação invalida");
             this.operando1 = "";
             this.operando2 = "";
@@ -100,6 +101,7 @@ public class  Visor extends JLabel {
     public String getMsg() {
         return msg;
     }
+
     public void setMsg(){
         this.msg = this.operando1+ this.operador + this.operando2;
         this.setText(msg);
