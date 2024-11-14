@@ -15,6 +15,7 @@ public class Paineis {
         visor.setBackground(visorC);
         visor.add(InteracaoBotoes.visor, BorderLayout.CENTER);
 
+
         teclado.setLayout(new GridLayout(4,4));
         teclado.setBounds(0,170,326,305);
         teclado.setBackground(backgroundColor);

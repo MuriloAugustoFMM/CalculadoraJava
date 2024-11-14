@@ -1,3 +1,5 @@
+import visor.Visor;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
